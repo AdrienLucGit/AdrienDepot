@@ -46,4 +46,3 @@ ggplot (data)+
   ggtitle("Densité des tailles et années de naissance des espèces colorées")
 
 
-

@@ -1,0 +1,87 @@
+---
+title: "Rapport"
+author: "LUC Adrien"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_document:
+    code_folding: hide 
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
+
+bibliography: biblio/starwars.bib
+csl: biblio/isara-iso-690.csl
+link-citations: true
+output_dir: "~/Téléchargements"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r logo, echo=FALSE, out.width = '30%', fig.align = "center", fig.cap="Fig. 1: Logo  Rmarkdown"}
+knitr::include_graphics("Star_Wars_Logo.svg.png")
+```
+
+# Introduction
+
+Ce rapport présente une analyse des personnage de Star Wars issu du jeu de données disponible dans le package 'dplyr'
+Ici l'objectif etait de créer un graphique extravagant.
+
+
+# Les données
+
+Voici le tableau de donnée: 
+
+```{r presentation, echo=FALSE}
+head(starwars)
+
+ligne<-dim(starwars)[1]
+colonne<-dim(starwars)[2]
+
+```
+Tableau avec `r ligne` lignes et `r colonne` colonnes.
+Il y a `r nrow(starwars)` personnages dans la base de données.
+D'après la source [@wikipedia_starwars], il y a bien  `r nrow(starwars)` personnages
+
+```{r data-cleaning, echo=TRUE}
+data <- starwars |> 
+  filter(!is.na(height) & !is.na(birth_year))
+```
+
+## Graphique de densité 2D
+
+```{r density-2d, echo=TRUE, fig.height=6, fig.width=8}
+ggplot (data)+
+  geom_density_2d(aes(x = height, y = birth_year), color = "yellow", linetype = 8)+ 
+  geom_point(aes(x = height, y = birth_year, color = species),size = 3, alpha = 2, shape = 7)+ 
+  theme(
+    panel.background = element_rect(fill = "black"),
+    plot.background = element_rect(fill = "black"),
+    axis.text = element_text(color = "white"),
+    axis.title = element_text(color = "white"),
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 12, color = "yellow"))+ 
+  ggtitle("Densité des tailles et années de naissance des espèces colorées")
+```
+
+# Analyses
+Ce graphique de densité en deux dimentions montre la repartation des personnages selon leur taille et leur age.
+Cette analyse montre que la plupart des personnages mesurent entre `r round(mean(data$height, na.rm=TRUE), 1)` cm et `r round(median(data$height, na.rm=TRUE), 1)` cm.
+
+# Références*
+
+
+## Liens
+
+ISARA : <https://isaranet.fr/> consulté le ...
+
+## Bibliographie
+
+Liste des publications :

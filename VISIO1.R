@@ -1,5 +1,7 @@
 install.packages("dplyr") # instaler le package dplyr
 library(dplyr)
+install.packages("ggplot2")
+library(ggplot2)
 data("starwars") #dans dplyr il y a un jeu de donné starwars
 starwars
 head(starwars)
@@ -12,21 +14,9 @@ library(ggplot2)
 
 data <- starwars |> filter(!is.na(height) & !is.na(mass) & !is.na(hair_color)& !is.na(birth_year) & !is.na(sex)& !is.na(gender)& !is.na(homeworld)& !is.na(species))
 head(data)
-data2 <- data |> select(height, species, homeworld) #pour avoir que 3 variable
-data2
-ggplot(data2) + geom_histogram(aes(x= height)) # histo de la taille
-
-###chatgpt###
-
-ggplot(data, aes(x = homeworld, y = height, color = species)) +
-  geom_point(size = 4, alpha = 0.7) +  
-  theme_minimal() + #ca sert a rien autant ecrire theme() et faire le travail
-  coord_flip() + # Tourne le graphique pour lisibilité
-  ggtitle("Taille des personnages selon leur planète d'origine") +
-  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 14))
 
 
-###De moi###
+###premier graph###
 ggplot(data)+
   geom_point(aes(x = height, y = homeworld, color= species))
 

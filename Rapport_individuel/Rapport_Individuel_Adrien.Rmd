@@ -1,0 +1,105 @@
+---
+title: 'Blockchain et traçabilité en agroalimentaire : une révolution numérique pour
+  la sécurité et la transparence'
+author: "LUC Adrien"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:  
+  pdf_document:
+    
+    
+    toc: true
+    toc_depth: '3'
+  html_document:
+    
+    code_folding: hide
+    fig_caption: true
+    number_sections: true
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
+    css: styles.css
+bibliography: DataRapport/Sources/Sources.bib
+csl: "DataRapport/isara-iso-690.csl"
+link-citations: true
+output_dir: ~/Téléchargements
+header-includes:
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyfoot[C]{\thepage}
+  - \renewcommand{\headrulewidth}{0pt}
+  - \setlength{\headheight}{13pt}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r logo, echo=FALSE, out.width = '80%', fig.align = "center", fig.cap="Fig. 1: Illustration blockchaine"}
+knitr::include_graphics("DataRapport/ImageBlockchain.png")
+```
+
+# Introduction : Pourquoi la traçabilité est primordiale? 
+
+La traçabilité dans l'industrie agroalimentaire (IAA) fait référence à la capacité de suivre les produits alimentaires tout au long de leur chaîne de production, de transformation et de distribution, jusqu’au consommateur final. Cela inclut le suivi des matières premières, des ingrédients, des procédés de fabrication, ainsi que des conditions de transport et de stockage. La traçabilité est indispensable pour garantir la qualité, la sécurité et l'authenticité des produits alimentaires.[@paquet_hygiene_2025].
+
+La traçabilité a été mise en évidence dans plusieurs scandales alimentaires. Par exemple, l’affaire de la viande de cheval en 2013 a révélé que de la viande de cheval était vendue comme de la viande de bœuf, ce qui a choqué le public et entraîné une perte de confiance des consommateurs. Un autre scandale majeur a concerné le lait contaminé en 2008 en Chine, où du lait en poudre contenant de la mélamine a été vendu à des milliers de familles. Ces exemples montrent qu'un système de traçabilité efficace est crucial pour prévenir de tels événements et assurer la sécurité des produits alimentaires.[@paquet_hygiene_2025].
+
+Actuellement, de nombreuses entreprises de l'IAA utilisent des systèmes de traçabilité basés sur la gestion papier ou des bases de données classiques, qui peuvent être inefficaces et vulnérables aux erreurs humaines. Ces méthodes ont des limites évidentes en matière de transparence, d’efficacité et de fiabilité, surtout lorsqu'il s'agit de vérifier les informations à chaque étape de la chaîne d'approvisionnement. De plus, la centralisation des données dans une seule base de données crée un point de défaillance unique et peut exposer les informations à des risques de fraude et de manipulation.[@paquet_hygiene_2025].
+
+# La blockchain en deux mots
+
+## Définition :
+
+La blockchain est une technologie numérique qui permet de stocker des informations de manière décentralisée, sécurisée et immuable. Elle fonctionne comme un registre numérique partagé, où les données sont organisées en "blocs" qui sont liés entre eux et validés par un réseau d'acteurs. Une fois qu’un bloc est ajouté, il ne peut plus être modifié, garantissant ainsi l'intégrité des données [@economie_gouv_2025, @supply_chain_info_2025]. Cette technologie permet de renforcer la sécurité des informations et de garantir une traçabilité fiable et transparente dans des secteurs comme l'agroalimentaire.
+
+## Fonctionnement : 
+
+Le fonctionnement de la blockchain repose sur plusieurs principes fondamentaux :
+**Les blocs** : Chaque bloc contient un ensemble d’informations (transactions, actions, etc.), un horodatage et un lien vers le bloc précédent, formant ainsi une chaîne continue.
+**La validation** : Les informations sont validées par un consensus entre les participants du réseau. Cela évite toute manipulation des données par une seule entité.
+**La cryptographie** : Les données sont protégées par des techniques de cryptographie, ce qui les rend extrêmement sécurisées.
+**La décentralisation** : La blockchain ne repose pas sur une entité centrale pour gérer les données, mais sur un réseau distribué d'acteurs qui partagent et valident les informations. [@economie_gouv_2025].
+
+## Comparaison avec les bases de données classiques
+
+Contrairement aux bases de données classiques, qui sont souvent centralisées et peuvent être modifiées ou manipulées par un administrateur unique, la blockchain est décentralisée. Cela signifie que toutes les informations sont partagées et validées par plusieurs acteurs, rendant toute tentative de falsification extrêmement difficile. En outre, les données sur la blockchain sont immuables, ce qui renforce la transparence et la confiance dans les informations fournies. [@economie_gouv_2025].
+
+# L'impact de la blockchaine sur la tracabilité en IAA 
+
+## Fiabilité et transparence :
+
+La blockchain offre un niveau de fiabilité et de transparence inégalé en matière de traçabilité. Chaque acteur de la chaîne d'approvisionnement (producteurs, transformateurs, distributeurs) ajoute ses informations de manière décentralisée, et ces informations ne peuvent pas être modifiées. Cela garantit que les données concernant la provenance des produits sont exactes et transparentes.[@crystalchain_2025].
+
+## Réduction des fraudes :
+
+L'un des avantages majeurs de la blockchain est sa capacité à réduire les fraudes. En prouvant l’origine des produits, elle permet de lutter contre les contrefaçons et de garantir aux consommateurs que les produits sont bien ceux qu’ils prétendent être. Par exemple, dans le secteur du vin, certaines entreprises utilisent déjà la blockchain pour prouver l'origine et l'authenticité de leurs produits.[@crystalchain_2025].
+
+## Sécurité sanitaire :
+
+La blockchain permet de renforcer la sécurité sanitaire en permettant une identification rapide des lots incriminés en cas de contamination. Si un produit est trouvé contaminé, il est possible de retracer son parcours complet (des matières premières aux produits finis) grâce aux informations enregistrées dans la blockchain. Cela permet de réagir rapidement et de limiter les risques pour la santé publique. [@fao_2025]
+
+## Efficacité :
+
+La blockchain améliore l'efficacité de la traçabilité en automatisant de nombreuses étapes et en éliminant les intermédiaires inutiles, ce qui permet de réduire les coûts opérationnels, d’accélérer les processus et de garantir un suivi plus rapide et précis des produits en temps réel. Ce système décentralisé permet à chaque acteur de la chaîne d'approvisionnement (producteurs, transformateurs, distributeurs) d'ajouter et de valider les informations relatives aux produits de manière transparente et sécurisée, sans qu’il soit nécessaire d’interagir avec un acteur central.
+
+Un exemple concret de l’utilisation de la blockchain dans ce contexte est le projet mis en place par Carrefour. L'enseigne a intégré la technologie blockchain pour garantir la traçabilité de certains produits alimentaires, comme les tomates. Grâce à cette solution, Carrefour permet aux consommateurs de connaître l’origine exacte des tomates qu'ils achètent, y compris les informations sur la ferme de production, les méthodes agricoles utilisées, la date de récolte, et bien plus encore. Les consommateurs peuvent accéder à ces informations via une application mobile dédiée, simplement en scannant le code-barres ou le QR code présent sur l’emballage. Cette transparence renforce la confiance des consommateurs en offrant une garantie de qualité et d'authenticité, tout en simplifiant la gestion des produits pour Carrefour et ses fournisseurs.[@carrefour_2025].
+
+# Conclusion
+
+La blockchain représente une avancée majeure pour la traçabilité en agroalimentaire, en offrant une transparence, une sécurité et une fiabilité accrues dans la gestion des informations tout au long de la chaîne de production. Grâce à sa capacité à garantir l'immutabilité des données et à réduire les risques de fraude et de manipulation, elle permet une meilleure gestion des crises sanitaires, une traçabilité en temps réel, et un gain d'efficacité grâce à l’automatisation et à la suppression des intermédiaires inutiles. Des entreprises comme Carrefour montrent déjà l'impact positif de cette technologie, permettant aux consommateurs d’avoir un accès direct à des informations détaillées sur les produits alimentaires via des applications mobiles. [@carrefour_2025].
+
+Cependant, l’adoption généralisée de la blockchain dans le secteur agroalimentaire pose encore plusieurs défis. Le principal obstacle reste la mise en œuvre de cette technologie à grande échelle, qui nécessite des investissements substantiels en infrastructures, en formation et en gestion des données. De plus, l’efficacité de la blockchain dépend de la qualité des informations enregistrées dans le système, ce qui implique une collaboration étroite entre les différents acteurs de la chaîne d'approvisionnement pour garantir la fiabilité des données.
+
+En dépit de ces défis, la blockchain offre une véritable opportunité de révolutionner la traçabilité dans l’agroalimentaire, avec des avantages potentiels non seulement pour la sécurité des produits, mais aussi pour l'amélioration de la compétitivité des entreprises. En permettant une gestion plus précise et transparente des produits, elle pourrait également contribuer à renforcer la confiance des consommateurs dans la provenance et la qualité des produits alimentaires. Cependant, la réussite de cette transformation dépendra largement de l’engagement de l'ensemble des acteurs du secteur, de l'adoption de la technologie, et de la mise en place de normes et de régulations appropriées pour encadrer son utilisation. [@supply_chain_info_2025]
+
+# Références
+
+## Liens
+
+ISARA : <https://isaranet.fr/> 
+
+## Bibliographie
+
+
